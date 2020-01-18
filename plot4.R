@@ -19,6 +19,8 @@ subsetDate$Sub_metering_1 <- as.numeric(subsetDate$Sub_metering_1)
 subsetDate$Sub_metering_2 <- as.numeric(subsetDate$Sub_metering_2)
 subsetDate$Sub_metering_3 <- as.numeric(subsetDate$Sub_metering_3)
 
+########Exporting Data as Png File in given size of 480X480####
+png("plot4.png", width=480, height=480)
 
 #############Plotting  the Data##############
 par(mfrow = c(2, 2)) 
@@ -34,6 +36,5 @@ legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=
 
 plot(subsetDate$Datetime, subsetDate$Global_reactive_power, type="l", xlab="datetime", ylab="Global_reactive_power")
 
-########Exporting Data as Png File in given size of 480X480####
-png("plot4.png", width=480, height=480)
+
 dev.off()

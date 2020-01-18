@@ -19,13 +19,16 @@ subsetDate$Sub_metering_1 <- as.numeric(subsetDate$Sub_metering_1)
 subsetDate$Sub_metering_2 <- as.numeric(subsetDate$Sub_metering_2)
 subsetDate$Sub_metering_3 <- as.numeric(subsetDate$Sub_metering_3)
 
-#############Plotting  the Data##############
-plot(subsetDate$Datetime, subsetDate$Sub_metering_1, type="l", ylab="Energy Submetering", xlab="")
-lines(subsetDate$Datetime, subsetDate$Sub_metering_2, type="l", col="red")
-lines(subsetDate$Datetime, subsetDate$Sub_metering_3, type="l", col="red")
-legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, lwd=2.5, col=c("black", "red", "blue"))
-
 
 ########Exporting Data as Png File in given size of 480X480####
 png("plot3.png", width=480, height=480)
+
+#############Plotting  the Data##############
+plot(subsetDate$Datetime, subsetDate$Sub_metering_1, type="l", ylab="Energy Submetering", xlab="")
+lines(subsetDate$Datetime, subsetDate$Sub_metering_2, type="l", col="red")
+lines(subsetDate$Datetime, subsetDate$Sub_metering_3, type="l", col="blue")
+legend("topright", c("Sub_metering_1", "Sub_metering_2", "Sub_metering_3"), lty=1, lwd=2.5, col=c("black", "red", "blue"))
+
+
+
 dev.off()
